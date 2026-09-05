@@ -85,9 +85,9 @@ def four_in_a_row_vertical(board):
                 and board[row + 2, column] == piece
                 and board[row + 3, column] == piece
             ):
-                return True
+                return piece
 
-    return False
+    return 0
 
 # Step 8 - four_in_a_row_diagonal_down_right (not yet solved)
 # TODO: implement
