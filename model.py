@@ -51,11 +51,43 @@ def valid_moves(board):
         if not column_full(board, column)
     ]
 
-# Step 6 - four_in_a_row_horizontal (not yet solved)
-# TODO: implement
+# Step 6 - four_in_a_row_horizontal
+def four_in_a_row_horizontal(board):
+    """Return True if there are four matching non-zero pieces in a row horizontally."""
+    rows, columns = board.shape
 
-# Step 7 - four_in_a_row_vertical (not yet solved)
-# TODO: implement
+    for row in range(rows):
+        for column in range(columns - 3):
+            piece = board[row, column]
+
+            if (
+                piece != 0
+                and board[row, column + 1] == piece
+                and board[row, column + 2] == piece
+                and board[row, column + 3] == piece
+            ):
+                return piece
+
+    return 0
+
+# Step 7 - four_in_a_row_vertical
+def four_in_a_row_vertical(board):
+    """Return True if there are four matching non-zero pieces in a column vertically."""
+    rows, columns = board.shape
+
+    for column in range(columns):
+        for row in range(rows - 3):
+            piece = board[row, column]
+
+            if (
+                piece != 0
+                and board[row + 1, column] == piece
+                and board[row + 2, column] == piece
+                and board[row + 3, column] == piece
+            ):
+                return True
+
+    return False
 
 # Step 8 - four_in_a_row_diagonal_down_right (not yet solved)
 # TODO: implement
