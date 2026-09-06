@@ -172,7 +172,6 @@ def step_env(board, column, player):
 # Step 15 - encode_board
 def encode_board(board, current_player):
     """Encode a 6x7 board as a (2, 6, 7) float32 tensor from current_player's view."""
-    board = np.asarray(board)
     opponent = other_player(current_player)
 
     current_plane = (board == current_player).astype(np.float32)
