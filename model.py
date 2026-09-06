@@ -203,7 +203,6 @@ def init_policy_head(hidden_channels=16, num_columns=7):
 
     return nn.Sequential(
         nn.Conv2d(hidden_channels, 1, kernel_size=1),
-        nn.ReLU(),
         nn.Flatten(start_dim=1),
         nn.Linear(6 * 7, num_columns)
     )
