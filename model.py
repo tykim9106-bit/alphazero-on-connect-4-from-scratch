@@ -344,7 +344,6 @@ def ucb_score(parent, child, c_puct=1.5):
 
 # Step 30 - select_best_child
 def select_best_child(node, legal_actions, c_puct=1.5):
-    # TODO: return (action, child) maximizing PUCT among legal children of node.
     best_action = None
     best_child = None
     best_score = float('-inf')
